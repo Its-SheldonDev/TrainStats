@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--=============== FAVICON ===============-->
+        <link rel="icon" type="image/png" href="./src/img/main/favicon.png">
+        <!--=============== BOXICONS ===============-->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="../src/style/404/styles.css">
+
+        <title>Erreur 404</title>
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header">
+            <nav class="nav container">
+                <a href="../index.php" class="nav__logo">
+                    TRAINSTATS
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="../index.php" class="nav__link">Retour</a>
+                        </li>
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class='bx bx-x'></i>
+                    </div>
+                </div>
+
+                <!-- Toggle button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt'></i>
+                </div>
+            </nav>
+        </header>
+
+        <!--==================== MAIN ====================-->
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home">
+                <div class="home__container container">
+                    <div class="home__data">
+                        <span class="home__subtitle">Erreur 404</span>
+                        <h1 class="home__title">Salut Toi !</h1>
+                        <p class="home__description">
+                            Nous ne parvenons pas à trouver la page <br>que vous recherchez.
+                        </p>
+                        <a href="../index.php" class="home__button">
+                            Retourner en arrière
+                        </a>
+                    </div>
+
+                    <div class="home__img">
+                        <img src="../src/img/404/train.png" alt="">
+                        <div class="home__shadow"></div>
+                    </div>
+                </div>
+
+                <footer class="home__footer">
+                    <span>TRAINSTATS</span>
+                    <span>|</span>
+                    <span>contact@sheldon-dev.fr</span>
+                </footer>
+            </section>
+        </main>
+
+        <!--=============== SCROLLREVEAL ===============-->
+        <script src="../src/js/404/scrollreveal.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="../src/js/404/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
+/*=============== VARIABLES CSS ===============*/
+:root {
+    /*========== Colors ==========*/
+    --body-color: hsla(303, 63%, 44%, 0);
+    --text-color: hsl(0, 0%, 12%);
+    /*========== Font and typography ==========*/
+    --body-font: "Inter", sans-serif;
+    --loading-font-size: 2rem;
+}
+
+/*=============== MAIN ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--body-color);
+    overflow: hidden;
+}

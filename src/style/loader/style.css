@@ -1,0 +1,91 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
+
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background-color: #31a366;
+    z-index: 9999;
+}
+
+.loading {
+    color: hsl(0, 0%, 12%);
+    font-size: 2rem;
+    font-family: "Inter", sans-serif;
+}
+
+.loading__dots {
+    display: inline-flex;
+    column-gap: 0.25rem;
+}
+
+.loading__dot {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    background-color: hsl(0, 0%, 12%);
+    border-radius: 50%;
+}
+
+.loading__dot:nth-child(1) {
+    position: absolute;
+    transform: scale(0);
+}
+
+.loading__dot:nth-child(4) {
+    background: transparent;
+}
+
+.loading__dot-down {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: hsl(0, 0%, 12%);
+    border-radius: 50%;
+    transform: translate(0);
+}
+
+.loading-container.animate .loading__dot:nth-child(1) {
+    animation: scale-dot 0.8s 0.2s forwards;
+}
+
+.loading-container.animate .loading__dot:nth-child(2),
+.loading-container.animate .loading__dot:nth-child(3) {
+    animation: move-right 0.6s forwards;
+}
+
+.loading-container.animate .loading__dot-down {
+    animation: move-right-down 0.8s 0.2s forwards linear, move-down 2.8s 0.3s forwards ease-in;
+}
+
+@keyframes scale-dot {
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes move-right {
+    100% {
+        transform: translateX(0.75rem);
+    }
+}
+
+@keyframes move-right-down {
+    50% {
+        transform: translate(1.5rem, 0.25rem);
+    }
+    100% {
+        transform: translate(2rem, 0.5rem);
+    }
+}
+
+@keyframes move-down {
+    100% {
+        transform: translate(10rem, 80vh);
+    }
+}
