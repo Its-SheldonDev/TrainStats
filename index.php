@@ -10,29 +10,6 @@ require_once('./src/cfg/db.php');
 
 $login_error = "";
 
-// Gestion de l'inscription (register)
-if (isset($_POST['register'])) {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    // Vérifier si l'utilisateur existe déjà
-    $check_query = "SELECT * FROM users WHERE username = '$username' OR email = '$email'";
-    $check_result = $conn->query($check_query);
-
-    if ($check_result->num_rows > 0) {
-        $login_error = "Ce nom d'utilisateur ou cet email existe déjà.";
-    } else {
-        // Insérer le nouvel utilisateur dans la base de données avec allowacces par défaut à "no"
-        $insert_query = "INSERT INTO users (username, email, password, allowacces) VALUES ('$username', '$email', '$password', 'no')";
-        if ($conn->query($insert_query) === TRUE) {
-            $login_error = "Inscription réussie. Vous pouvez maintenant vous connecter.";
-        } else {
-            $login_error = "Erreur lors de l'inscription : " . $conn->error;
-        }
-    }
-}
-
 // Gestion de la connexion (login)
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
@@ -42,11 +19,9 @@ if (isset($_POST['login'])) {
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        // L'utilisateur existe dans la base de données, connexion réussie
         $_SESSION['username'] = $username;
-        header("Location: ./pages/home.php"); // Remplacez "dashboard.php" par la page de destination après la connexion réussie.
+        header("Location: ./pages/home.php");
     } else {
-        // L'utilisateur n'existe pas ou le mot de passe est incorrect
         $login_error = "Identifiants invalides. Veuillez réessayer.";
     }
 }
@@ -61,12 +36,12 @@ if (isset($_POST['login'])) {
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5">
     <meta name="format-detection" content="telephone=no">
-    <meta name="description" content="Le chat officiel des étudiants du lycée de l'Atlantique">
+    <meta name="description" content="TrainStats - Suivit de mes voyage en temps réel">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Gochat — Connexion">
-    <meta name="twitter:description" content="Le chat officiel des étudiants du lycée de l'Atlantique">
+    <meta name="twitter:title" content="TrainStats — Connexion">
+    <meta name="twitter:description" content="TrainStats - Suivit de mes voyage en temps réel">
     <meta name="twitter:image" content="#">
-    <meta name="theme-color" content="#77ffc0">
+    <meta name="theme-color" content="#41D687">
     <!--=============== FAVICON ===============-->
     <link rel="icon" type="image/png" href="./src/img/main/favicon.png">
     <!--=============== BOXICONS ===============-->
@@ -97,7 +72,7 @@ if (isset($_POST['login'])) {
 <div class="login">
     <div class="login__content">
         <div class="login__img">
-            <img src="./src/img/login/img-login.svg" alt="Connexion Image">
+            <img src="./src/img/login/TrainStats.png" alt="Connexion Image">
         </div>
 
         <div class="login__forms">
@@ -125,7 +100,6 @@ if (isset($_POST['login'])) {
        </div>
   </div>
 </div>
-
 
 
 <!--=============== JS ===============-->

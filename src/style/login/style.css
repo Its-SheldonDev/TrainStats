@@ -3,11 +3,11 @@
 /*=============== VARIABLES CSS ===============*/
 :root{
     /*===== Colors =====*/
-    --first-color: #632f9a;
-    --first-color-dark: #521e86;
+    --first-color: hsl(148, 65%, 55%);
+    --first-color-dark: hsl(148, 54%, 42%);
     --first-color-light: #A49EAC;
     --first-color-lighten: #F2F2F2;
-    --body-color-remix: #F2F2F2;
+    --body-color: hsl(148, 54%, 42%);
 
     /*===== Font and typo =====*/
     --body-font: 'Open Sans', sans-serif;
@@ -216,9 +216,8 @@ img{
 
     .login__img {
         display: flex;
-        width: 680px;
-        height: 370px;
-        background-color: var(--first-color-lighten);
+        width: 580px;
+        height: 320px;
         border-radius: 1rem;
         padding-left: 1rem;
         overflow: hidden;
@@ -226,7 +225,7 @@ img{
     }
 
     .login__img img {
-        width: 70%;
+        width: 55%;
         margin-top: 1.5%;
     }
 
@@ -235,7 +234,7 @@ img{
     }
 
     .login__registre{
-        bottom: -2rem;
+        bottom: -15px;
     }
 
     .login__create{
