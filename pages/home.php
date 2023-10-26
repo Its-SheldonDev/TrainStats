@@ -43,6 +43,9 @@ if (!isset($_SESSION['username'])) {
             TrainStats
        </div>
             <div class="menu">
+                <a class="planning-button" href="planning.php">
+                    <i class='bx bxs-briefcase-alt-2'></i>
+                </a>
                 <a class="logout-button" href="logout.php">
                     <i class='bx bxs-log-out'></i>
                 </a>

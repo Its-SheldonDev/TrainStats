@@ -63,17 +63,24 @@ nav {
     vertical-align: middle;
 }
 
+.logo a {
+    text-decoration: none;
+}
+
 .menu {
     display: flex;
     align-items: center;
 }
 
 .logout-button {
-    background: none;
-    border: none;
     color: white;
-    font-size: 1rem;
-    cursor: pointer;
+    font-size: 24px;
+}
+
+.planning-button {
+    color: white;
+    font-size: 24px;
+    margin-right: 10px;
 }
 
 .loading-bar {
