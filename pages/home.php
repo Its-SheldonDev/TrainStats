@@ -7,21 +7,6 @@ if (!isset($_SESSION['username'])) {
     header("Location: login.php"); // Redirige vers la page de connexion si l'utilisateur n'est pas connecté
     exit();
 }
-
-// Vérifier si l'utilisateur est autorisé à accéder
-$username = $_SESSION['username'];
-$check_access_query = "SELECT allowacces FROM users WHERE username = '$username'";
-$check_access_result = $conn->query($check_access_query);
-
-if ($check_access_result->num_rows > 0) {
-    $user = $check_access_result->fetch_assoc();
-    $allow_access = $user['allowacces'];
-
-    if ($allow_access === 'no') {
-        header("Location: ./noaccess.php"); // Redirige vers la page noaccess.php si l'accès est interdit
-        exit();
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -44,13 +29,28 @@ if ($check_access_result->num_rows > 0) {
         <!--=============== BOXICONS ===============-->
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
         <!--=============== CSS ===============-->
-        
+        <link rel="stylesheet" type="text/css" href="../src/style/main/style.css">
 
-        <title>Gochat — Home</title>
+        <title>TrainStats — Home</title>
     </head>
     <body>
-    <h1>Bienvenue sur la page Home</h1>
-    <p>Bonjour, <?php echo $_SESSION['username']; ?> ! Vous êtes autorisé à accéder à cette page.</p>
-    <a href="logout.php">Déconnexion</a>
-    </body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="../src/img/login/TrainStats.png" alt="TrainStats Icon">
+                TrainStats
+            </div>
+            <div class="menu">
+                <a class="logout-button" href="logout.php">
+                    <i class='bx bxs-log-out'></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <div class="loading-bar">
+        <div class="progress">
+            <div class="inner-animation"></div>
+        </div>
+    </div>
+</body>
 </html>

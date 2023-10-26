@@ -31,20 +31,15 @@ CREATE TABLE `users` (
   `id` int NOT NULL,
   `username` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `nom` varchar(255) DEFAULT NULL,
-  `prenom` varchar(255) DEFAULT NULL,
-  `classe` varchar(255) DEFAULT NULL,
-  `admin` enum('yes','no') NOT NULL DEFAULT 'no',
-  `allowacces` enum('yes','no') NOT NULL DEFAULT 'no'
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `nom`, `prenom`, `classe`, `admin`, `allowacces`) VALUES
-(1, 'Sheldon', 'contact@sheldon-dev.fr', 'test1234', NULL, NULL, NULL, 'yes', 'yes');
+INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
+(1, 'Sheldon', 'contact@sheldon-dev.fr', 'test1234');
 
 --
 -- Index pour les tables déchargées

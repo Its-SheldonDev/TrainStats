@@ -1,26 +1,124 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 /*=============== VARIABLES CSS ===============*/
 :root {
     /*========== Colors ==========*/
-    --body-color: hsla(303, 63%, 44%, 0);
-    --text-color: hsl(0, 0%, 12%);
+    --first-color: hsl(148, 65%, 55%);
+    --first-color-dark: hsl(148, 54%, 42%);
     /*========== Font and typography ==========*/
-    --body-font: "Inter", sans-serif;
-    --loading-font-size: 2rem;
+    --body-font: 'Open Sans', sans-serif;
+    --h1-font-size: 1.5rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+}
+
+@media screen and (min-width: 768px){
+    :root{
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+    }
 }
 
 /*=============== MAIN ===============*/
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+header {
+    background-color: var(--first-color);
+    width: 100%;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
-    display: grid;
-    place-items: center;
-    background-color: var(--body-color);
-    overflow: hidden;
+    margin: 0;
+    background-color: var(--first-color-dark);
+    padding-top: 60px;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
 }
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: white;
+    display: inline-block;
+    line-height: 40px;
+}
+
+.logo img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Loading Bar Styles (same as before) */
+.loading-bar {
+    width: 300px;
+    height: 20px;
+    background-color: var(--first-color-dark);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    width: 0;
+    height: 100%;
+    background-color: var(--first-color);
+    transition: width 1s;
+    animation: progressAnimation 3s linear infinite;
+    position: relative;
+}
+
+.inner-animation {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    background-size: 200% 100%;
+    animation: innerAnimation 3s linear infinite;
+}
+
+@keyframes progressAnimation {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes innerAnimation {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
