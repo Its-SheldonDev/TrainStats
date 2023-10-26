@@ -2,10 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 /*=============== VARIABLES CSS ===============*/
 :root {
-    /*========== Colors ==========*/
+/*========== Colors ==========*/
     --first-color: hsl(148, 65%, 55%);
     --first-color-dark: hsl(148, 54%, 42%);
-    /*========== Font and typography ==========*/
+/*========== Font and typography ==========*/
     --body-font: 'Open Sans', sans-serif;
     --h1-font-size: 1.5rem;
     --normal-font-size: .938rem;
@@ -20,14 +20,6 @@
 }
 
 /*=============== MAIN ===============*/
-header {
-    background-color: var(--first-color);
-    width: 100%;
-    padding: 10px 0;
-    position: fixed;
-    top: 0;
-}
-
 body {
     display: flex;
     flex-direction: column;
@@ -39,6 +31,15 @@ body {
     padding-top: 60px;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
+}
+
+/* Header Menu */
+header {
+    background-color: var(--first-color);
+    width: 100%;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
 }
 
 nav {
@@ -83,6 +84,7 @@ nav {
     margin-right: 10px;
 }
 
+/* Progress bar */
 .loading-bar {
     width: 300px;
     height: 20px;
@@ -127,3 +129,11 @@ nav {
     }
 }
 
+/* Button Animation */
+.bx {
+    transition: transform 0.5s ease;
+}
+
+.bx:hover {
+    transform: scale(1.2); 
+}
