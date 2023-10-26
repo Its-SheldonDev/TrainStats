@@ -45,7 +45,6 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -55,6 +54,10 @@ nav {
     color: white;
     display: inline-block;
     line-height: 40px;
+}
+
+.logo a {
+    text-decoration: none;
 }
 
 .logo img {
@@ -77,7 +80,6 @@ nav {
     cursor: pointer;
 }
 
-/* Loading Bar Styles (same as before) */
 .loading-bar {
     width: 300px;
     height: 20px;
