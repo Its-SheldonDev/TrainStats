@@ -1,91 +1,241 @@
-/*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
+.train-animation .container {
+  position: relative;
+}
+
+.train-animation .content {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+}
 
 .loading-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    place-items: center;
-    background-color: #31a366;
-    z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-color: #31a366;
+  z-index: 9999;
 }
 
-.loading {
-    color: hsl(0, 0%, 12%);
-    font-size: 2rem;
-    font-family: "Inter", sans-serif;
+.track {
+  position: absolute;
+  width: 400px;
+  height: 5px;
+  background-color: #333;
+  top: 300px;
 }
 
-.loading__dots {
-    display: inline-flex;
-    column-gap: 0.25rem;
+.track:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 5px;
+  background-color: #333;
+  top: 4px;
+  box-shadow: 20px 0 #333, -20px 0 #333, -40px 0 #333, -60px 0 #333, -80px 0 #333, 40px 0 #333, 60px 0 #333, 80px 0 #333, 100px 0 #333, 120px 0 #333, 140px 0 #333, 160px 0 #333, 180px 0 #333, 200px 0 #333, 220px 0 #333, 240px 0 #333, 260px 0 #333, 280px 0 #333, 300px 0 #333, 320px 0 #333, 340px 0 #333, 360px 0 #333, 380px 0 #333, 400px 0 #333, 420px 0 #333, 440px 0 #333, -100px 0 #333, -120px 0 #333, -140px 0 #333, 460px 0 #333, 480px 0 #333;
+  animation: move 1s linear infinite reverse;
 }
 
-.loading__dot {
-    position: relative;
-    width: 8px;
-    height: 8px;
-    background-color: hsl(0, 0%, 12%);
-    border-radius: 50%;
+@keyframes move {
+  from { left: -100px; }
+  to { left: 100px; }
 }
 
-.loading__dot:nth-child(1) {
-    position: absolute;
-    transform: scale(0);
+.train {
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  border: 5px solid #333;
+  background-color: #9e2a2b;
+  border-radius: 0 18px 0 0;
+  top: 230px;
+  left: 185px;
+  animation: scale 1s linear infinite;
 }
 
-.loading__dot:nth-child(4) {
-    background: transparent;
+@keyframes scale {
+  0% { transform: scaleY(1); }
+  50% { transform: scaleY(0.99); }
+  100% { transform: scaleY(1); }
 }
 
-.loading__dot-down {
-    display: block;
-    width: 8px;
-    height: 8px;
-    background-color: hsl(0, 0%, 12%);
-    border-radius: 50%;
-    transform: translate(0);
+.train:before {
+  content: "";
+  position: absolute;
+  border: 6.5px solid #333;
+  background-color: #335c67;
+  width: 47px;
+  height: 66px;
+  left: -49px;
+  top: -31.5px;
 }
 
-.loading-container.animate .loading__dot:nth-child(1) {
-    animation: scale-dot 0.8s 0.2s forwards;
+.train:after {
+  position: absolute;
+  content: "";
+  width: 100px;
+  height: 12px;
+  border-radius: 10px;
+  border: 4px solid #333;
+  background-color: #fff3b0;
+  top: 33px;
+  left: -50px;
 }
 
-.loading-container.animate .loading__dot:nth-child(2),
-.loading-container.animate .loading__dot:nth-child(3) {
-    animation: move-right 0.6s forwards;
+.front {
+  position: absolute;
+  border: 5px solid #333;
+  background-color: #aed9e0;
+  box-shadow: inset 2px -5px rgba(255, 255, 255, 0.3);
+  width: 27px;
+  height: 40px;
+  left: -39px;
+  top: -18px;
 }
 
-.loading-container.animate .loading__dot-down {
-    animation: move-right-down 0.8s 0.2s forwards linear, move-down 2.8s 0.3s forwards ease-in;
+.front:before {
+  content: "";
+  position: absolute;
+  background-color: #333;
+  width: 17px;
+  height: 5px;
+  border-radius: 10px;
+  top: 27px;
+  left: 59px;
+  box-shadow: 0px 10px #333, -50px -45px #333, -86px -45px #333, -22px -41px #333, -11px -41px #333;
 }
 
-@keyframes scale-dot {
-    100% {
-        transform: scale(1);
-    }
+.front:after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 23px;
+  border: 3px solid #333;
+  left: 42px;
+  top: -10px;
+  background-color: #adb5bd;
 }
 
-@keyframes move-right {
-    100% {
-        transform: translateX(0.75rem);
-    }
+.wheels {
+  position: absolute;
+  z-index: 1;
 }
 
-@keyframes move-right-down {
-    50% {
-        transform: translate(1.5rem, 0.25rem);
-    }
-    100% {
-        transform: translate(2rem, 0.5rem);
-    }
+.smallOne, 
+.smallTwo, 
+.smallThree
+{
+  position: absolute;
+  border: 4px solid #333;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  top: 42px;
+  background-color: #e09f3e;
+  box-shadow: inset 2px 2px white;
+  z-index: 2;
 }
 
-@keyframes move-down {
-    100% {
-        transform: translate(10rem, 80vh);
-    }
+.smallOne {
+  left: 30px;
+  animation: spin .5s infinite linear;
+}
+
+.smallTwo {
+  left: 0;
+  animation: spin .5s infinite linear;
+}
+
+.smallThree {
+  left: -225px;
+  animation: spin .5s infinite linear;
+}
+
+.big {
+  position: absolute;
+  border: 5px solid #333;
+  border-radius: 50%;
+  width: 32px;
+  height: 33px;
+  background-color: #e09f3e;
+  box-shadow: inset 2px 2px white;
+  top: 35px;
+  left: -38px;
+  animation: spin .5s infinite linear;
+}
+
+.cord {
+  position: absolute;
+  height: 5px;
+  background-color: #333;
+  top: 37px;
+  left: -58px;
+  z-index: 3;
+}
+
+.cord:before {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 70px;
+  background-color: #333;
+  top: 17px;
+  left: 35px;
+}
+
+.cord:after {
+  content: "";
+  position: absolute;
+  background-color: #333;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  top: 7px;
+  left: 29px;
+}
+
+#up {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  top: -30px;
+  left: 11.5px;
+  z-index: -1;
+}
+
+.steam {
+  animation: up 2.5s ease-out infinite;
+}
+
+.steam2 {
+  animation: up 1.7s ease-out infinite 1s;
+}
+
+.steam2:before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 20px;
+}
+
+@keyframes up {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110px) translateX(-80px) scale(1.5);
+    opacity: 0.2;
+  }
 }

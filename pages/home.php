@@ -36,12 +36,12 @@ if (!isset($_SESSION['username'])) {
     <body>
     <header>
         <nav>
-        <div class="logo">
-        <a href="https://train.sheldon-dev.fr/">
-            <img src="../src/img/login/TrainStats.png" alt="TrainStats Icon">
-        </a>
-            TrainStats
-       </div>
+            <div class="logo">
+                <a href="https://train.sheldon-dev.fr/">
+                    <img src="../src/img/login/TrainStats.png" alt="TrainStats Icon">
+                </a>
+                TrainStats
+            </div>
             <div class="menu">
                 <a class="planning-button" href="planning.php">
                     <i class='bx bxs-briefcase-alt-2'></i>

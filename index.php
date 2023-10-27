@@ -47,26 +47,36 @@ if (isset($_POST['login'])) {
     <!--=============== BOXICONS ===============-->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="./src/style/loader/style.css">
     <link rel="stylesheet" href="./src/style/login/style.css">
+    <link rel="stylesheet" href="./src/style/loader/style.css">
     <!--=============== TITLE ===============-->
     <title>TrainStats — Connexion</title>
 </head>
 
 <body>
 <!--========== LOADING PART ==========-->
-<div class="loading-container">
-    <h1 class="loading">
-        Chargement
-        <div class="loading__dots">
-            <span class="loading__dot"></span>
-            <span class="loading__dot"></span>
-            <span class="loading__dot"></span>
-            <span class="loading__dot">
-                    <span class="loading__dot-down"></span>
-                </span>
+<div class="train-animation">
+    <div class="container">
+        <div class="loading-container">
+            <div class="container">
+                <div class="content">
+                    <div class="track"></div>
+                    <div class="train">
+                        <div class="front"></div>
+                        <div class="wheels">
+                            <div class="smallOne"></div>
+                            <div class="smallTwo"></div>
+                            <div class="big"></div>
+                        </div>
+                        <div class="cord"></div>
+                        <div id="up" class="steam"></div>
+                        <div id="up" class="steam2"></div>
+                        <div id="up" class="steam3"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </h1>
+    </div>
 </div>
 
 <div class="login">
@@ -103,7 +113,6 @@ if (isset($_POST['login'])) {
 
 
 <!--=============== JS ===============-->
-<script src="./src/js/loader/main.js"></script>
 <script src="./src/js/loader/start.js"></script>
 <script src="./src/js/login/main.js"></script>
 </body>
